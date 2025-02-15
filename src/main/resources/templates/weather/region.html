@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Select Region'">Select Region</title>
+    <link th:href="@{/css/bootstrap.min.css}" href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+        .custom-form {
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .custom-header {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="custom-form">
+        <h2 class="custom-header text-center text-primary">원하는 지역을 선택해 tlqkf아</h2>
+        <form th:action method="post">
+            <div class="mb-3">
+                <label for="scrollType" class="form-label" th:text="'지역 선택 :'">지역 선택 :</label>
+                <select id="scrollType" name="tempRegion" class="form-select">
+                    <option th:each="region : ${regions}"
+                            th:value="${region.getValue()}"
+                            th:text="${region.getKey()}">지역</option>
+                </select>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">전송해라 애송이</button>
+            </div>
+        </form>
+    </div>
+    <div style="text-align: center">
+        해당 데이터는 기상청 단기예보 API를 실시간으로 가져와 안내한다. </br>
+        지역 추가 기능은 아직 안만듦.
+
+    </div>
+</div>
+
+</body>
+</html>

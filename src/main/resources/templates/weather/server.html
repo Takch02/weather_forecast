@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<h2>🌤 Weather Forecast Data</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Category 값</th>
+        <th>Value 값</th>
+        <th>시간 값</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${map}">
+        <td th:text="${item.category}"></td>
+        <td th:text="${item.value}"></td>
+        <td th:text="${item.time}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
