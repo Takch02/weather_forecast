@@ -7,6 +7,8 @@ WORKDIR /app
 # 전체 프로젝트 파일 복사
 COPY . .
 
+RUN chmod +x ./gradlew
+
 # Gradle Wrapper가 포함되어 있다면 Wrapper를 사용하여 빌드합니다.
 # (Wrapper가 없을 경우, gradle 명령어가 바로 실행됩니다.)
 RUN ./gradlew bootJar
