@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link th:href="@{/css/bootstrap.min.css}"
-          href="../css/bootstrap.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <title th:text="'select region'"></title>
+    <!-- Bootstrap CSS 불러오기 -->
+    <link th:href="@{/css/bootstrap.min.css}" href="../css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- 커스텀 스타일 -->
+    <style>
+        /* 버튼 형태로 보이도록 스타일 적용 */
+        .custom-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            color: #fff;
+            background-color: red;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .custom-link:hover {
+            background-color: #138496;
+            transform: translateY(-2px);
+        }
+        .custom-link:active {
+            background-color: #117a8b;
+            transform: translateY(0);
+        }
+    </style>
+</head>
 <body>
-<a style="text-align: center" class="link-info" href="weather/region">현재 날씨</a>
+<!-- Bootstrap Flexbox를 이용한 가운데 정렬 -->
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <a class="custom-link" href="weather/region">현재 날씨 쌈@뽕하게 췤</a>
+</div>
 </body>
 </html>
