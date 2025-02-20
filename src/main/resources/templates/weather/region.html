@@ -29,7 +29,7 @@
         <h2 class="custom-header text-center text-primary">원하는 지역을 선택해 tlqkf아</h2>
         <form th:action method="post">
             <div class="mb-3">
-                <label for="scrollType" class="form-label scro" th:text="'지역 선택 :'">지역 선택 :</label>
+                <label for="scrollType" class="form-label" th:text="'지역 선택 :'">지역 선택 :</label>
                 <select id="scrollType" name="tempRegion" class="form-select">
                     <option th:each="region : ${regions}"
                             th:value="${region.getValue()}"
