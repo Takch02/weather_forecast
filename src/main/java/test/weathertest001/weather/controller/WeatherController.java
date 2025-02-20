@@ -73,6 +73,7 @@ public class WeatherController {
     /**
      * api 요청으로 가져온 모든 값을 list화 시킴
      */
+
     void start(Region region) {
 
         List<CategoryValue> listValue = weatherService.getWeather(region.getX(), region.getY())
@@ -81,7 +82,7 @@ public class WeatherController {
                 .map(JsonResponseDto.Body::getItems)
                 .map(JsonResponseDto.Items::getItemList)
                 .flatMapMany(Flux::fromIterable)
-                .map(item -> new CategoryValue(item.getCategory(), item.getFcstValue(), item.getBaseTime()))
+                .map(item -> new CategoryValue(item.getCategory(), item.getFcstValue(), item.getFcstTime(), item.getFcstDate()))
                 .collectList()
                 .block(); // 🔥 동기적으로 데이터 변환 (주의: WebFlux 환경에서는 블로킹을 최소화해야 함)
 
@@ -115,8 +116,10 @@ public class WeatherController {
 
                 String strTime = categoryValue.getTime();
                 tempValue.setTime(strTime.substring(0, 2) + ":" + strTime.substring(2));
-            }
 
+                String strDate = categoryValue.getDate();
+                tempValue.setDate(strDate.substring(0, 4) + " - " + strDate.substring(4, 6) + " - " + strDate.substring(6));
+            }
 
             if (categoryValue.getCategory().equals("SKY")) {
                 switch (categoryValue.getValue()) {

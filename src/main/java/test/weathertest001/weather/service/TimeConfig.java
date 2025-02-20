@@ -1,10 +1,12 @@
 package test.weathertest001.weather.service;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+@Slf4j
 @Data
 public class TimeConfig {
 

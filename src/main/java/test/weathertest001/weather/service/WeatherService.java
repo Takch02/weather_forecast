@@ -25,7 +25,7 @@ public class WeatherService {
         String baseDate = timeConfig.getDate();
         String baseTime = timeConfig.getTime(); // 0200, 0500, 0800, 1100, 1400, 1700, 2000, 2300 (1일 8회)
         log.info("current date, time: {}, {}", baseDate, baseTime);
-        String numOfRows = "12";
+        String numOfRows = "200";
         String pageNo = "1";
         String nx = x;   // 속초 (87, 141), 상주 (81, 102), 대구(90, 91)
         String ny = y;
