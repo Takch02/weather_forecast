@@ -1,5 +1,7 @@
 # 날씨 예보 프로그램
 
+![Image](https://github.com/user-attachments/assets/5c3eb50a-4070-4f09-9c7e-4bfcc0205d6a)
+
 Spring MVC를 공부하며 웹 어플리케이션을 하나 만들어 보고싶었습니다. 어떤게 좋을까 하다 API키로 정보를 가져오고 java 객체로 변환해보고 싶어 
 쉬워보이는(전혀 안쉬움) 기상청 단기예보 API를 가져와 만들었습니다.
 
