@@ -9,6 +9,8 @@ Spring MVC를 공부하며 웹 어플리케이션을 하나 만들어 보고싶�
 ## 데이터 변환 작업
 
 데이터는 기상청에서 json으로 가져옵니다. WebClient 객체를 이용하여 값을 가져온 후 category, value, time, date 값을 dto 객체에 넣습니다. 완성된 객체는 List에 차곡차곡 저장합니다.
+
+
 ![Image](https://github.com/user-attachments/assets/5c3eb50a-4070-4f09-9c7e-4bfcc0205d6a)
 
 ** 여기서 지역을 선택합니다. 지역은 제가 서버에서 추가해야합니다.
